@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Producción</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 400px; margin: auto; }
+        label { display: block; margin-top: 15px; font-weight: bold; }
+        input, select, button { width: 100%; padding: 12px; margin-top: 5px; box-sizing: border-box; font-size: 16px; border-radius: 6px; border: 1px solid #ccc; }
+        input[readonly] { background-color: #e9ecef; font-weight: bold; }
+        button { background-color: #0d6efd; color: white; border: none; margin-top: 25px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Control de Telar</h2>
+    <form method="POST">
+        <label>Telar:</label>
+        <input type="text" name="telar" value="{{ telar }}" readonly required>
+
+        <label>Turno:</label>
+        <select name="turno" required>
+            <option value="">Selecciona turno</option>
+            <option value="1">Turno 1</option>
+            <option value="2">Turno 2</option>
+            <option value="3">Turno 3</option>
+        </select>
+
+        <label>Producción (Metros / Kilos):</label>
+        <input type="number" step="any" name="produccion" placeholder="0.00" required>
+
+        <button type="submit">Guardar Registro</button>
+    </form>
+</body>
+</html>
